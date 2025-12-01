@@ -7,6 +7,6 @@ print(vorname,"kauft",anzahl,"Artikel zum Einzelpreis von",
 
 #Mischung von Datentypen int und str, muss beim Zusammensetzen in str
 #umgewandelt werden
-print(vorname + " kauft " + str(anzahl) + " Artikel zum Einzelpreis von "
+print(vorname + " kauft " + anzahl + " Artikel zum Einzelpreis von "
        + str(preis) + " Euro und bezahlt: " + str(anzahl * preis))
 
