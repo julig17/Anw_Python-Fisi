@@ -1,5 +1,5 @@
 #Verschachtelte Verzweigung
-zahl = 10
+zahl = 12
 if(zahl %2 == 0):
     print("Gerade")
 else:
@@ -9,13 +9,16 @@ else:
     else:
         print(" und ?")
 
-#oder der elegantere Weg
+#oder mit elif
 if(zahl %2 == 0):
     print("Gerade")
 elif(zahl % 3 == 0):
     print("Ungerade \n und durch drei teilbar")
 else:
     print("Ungerade \n und ?")
+
+
+
 
 match zahl:
     case 1|2|3|4|5:
