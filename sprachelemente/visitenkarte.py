@@ -56,6 +56,7 @@ Listen :)'''
 
 assertion_nachricht = "Du hast nicht genügend Daten eingegeben"
 ergebnis_liste_mit_eingaben = eingabe_daten.split(",")
+print(ergebnis_liste_mit_eingaben)
 #damit kann ich auch sicherstelen, dass genug Eingabenwerte da sind
 assert len(ergebnis_liste_mit_eingaben) == 5, assertion_nachricht
 vorname = ergebnis_liste_mit_eingaben[0]
