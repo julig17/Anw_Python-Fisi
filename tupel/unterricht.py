@@ -3,6 +3,15 @@ mein_tupel = ("Apfel", "Apfel", "Banane", "Kirsche")
 print(mein_tupel)
 zahlen_tupel = (1,2,2,5,15)
 print(zahlen_tupel)
+
+#Kurzschreibweise = Tupel  einpacken
+namen_tupel = "Max", "Moritz", "Lisa"
+print(namen_tupel)
+print(type(namen_tupel))
+#tupel auspacken
+vorname, nachname, spitzname = namen_tupel 
+print(vorname)
+print(nachname)
 #gleiche Elemente sind erlaubt
 doppel_tupel = ("Apfel", "Apfel", "Banane", "Kirsche")
 print(doppel_tupel)
