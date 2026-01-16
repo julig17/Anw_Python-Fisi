@@ -11,7 +11,13 @@ tupel_2 = (1,4,6)
 tupel_3 = tupel_1 + tupel_2
 print(tupel_3)
 print(tupel_3[1:4])
-# print(tupel_3[10])  # IndexError: tuple index out of range
+try:
+    print(tupel_3[10]) # IndexError: Hier gibt es keinen Index 10
+except IndexError as e:
+    print("Fehler:", e)
 print(2 in tupel_3)
 print(10 not in tupel_3)
-# del tupel_3[-1]  # TypeError: 'tuple' object doesn't support item deletion
+try:    
+    del tupel_3[-1]  # TypeError: 'tuple' object doesn't support item deletion
+except TypeError as e:
+    print("Fehler:", e)
