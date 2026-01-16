@@ -1,100 +1,98 @@
-#Definition
-mein_tupel = ("Apfel", "Apfel", "Banane", "Kirsche")
-print(mein_tupel)
-zahlen_tupel = (1,2,2,5,15)
-print(zahlen_tupel)
+obst_tupel = ("Apfel", "Banane", "Kirsche", "Dattel", "Apfel")           
+#print(obst_tupel) 
 
-#Kurzschreibweise = Tupel  einpacken
-namen_tupel = "Max", "Moritz", "Lisa"
-print(namen_tupel)
-print(type(namen_tupel))
-#tupel auspacken
-vorname, nachname, spitzname = namen_tupel 
-print(vorname)
-print(nachname)
-#gleiche Elemente sind erlaubt
-doppel_tupel = ("Apfel", "Apfel", "Banane", "Kirsche")
-print(doppel_tupel)
-#gemischte Datentypen-Elemente sind erlaubt
-gemischtes_tupel = ("Apfel", 5, 5.5, "Kirsche")
-print(gemischtes_tupel)
-#Tupel können wiederum Tupel enthalten
-mehrdimensionales_tupel = ("Apfel", (1,2,3), "Kirsche")
-print(mehrdimensionales_tupel)
+obst_liste = ["Apfel", "Banane", "Kirsche", "Dattel"]   
+#print(obst_liste)
+
+#print(type(obst_tupel))
+#print(type(obst_liste)) 
+
+# gemischte Datentypen im Tupel
+gemischt_tupel = ("Hallo", 42, 3.14, True)
+#print(gemischt_tupel)
+
+#Kurzschreibweise für Tupel 
+kurz_tupel = 1, 2, 3, "Vier"
+#print(type(kurz_tupel))
+eins, zwei, drei, vier = kurz_tupel
+#print(vier)
 
 
-#Zugriff auf Elemente über Index
-#erster Eintrag
-print(mein_tupel[0])
-#letzter Eintrag
-print(mein_tupel[-1])
-#Zugriff auf Elemente in mehrdimensionalen Tupeln
-print(mehrdimensionales_tupel[1][2])
 
-#Slicing
-slice_tupel = (2,4,6,7,8,9) 
-#vom anfang bis incl. 3.Element
-print(slice_tupel[0:3])  
-#rückwärts
-print(slice_tupel[::-1])   
+namen = ("Julia", "Greif")
+vorname, nachname = namen
+#print(nachname)
 
-#die Elemente des Tupels sind nicht änderbar 
-#slice_tupel[1] = 5
-#print(slice_tupel)
-
-#Verketten von Tupel mit +
-tupel_1 = (1,2,5)
-tupel_2 = (5,5,8,8) 
-print(tupel_1 + tupel_2)
+#mehrdimensionale Tupel
+mehrdim_tupel = (("A", "B"), (1, 2), (True, False))
 
 
-#Vervielfachen von Tupel mit *
-print(tupel_2 * 3)
+#Index / Slicen
+#print(kurz_tupel[::-1])
 
-#Prüfen, ob ein Element in  Tupel  enthalten ist mit in
-zeichenkette = ("Das", "ist", "in", "der", "Tupel")
-wort = "ist"    
-if wort in zeichenkette:
-    print(wort)
+#Unveränderlichkeit von Tupeln
+#kurz_tupel = 1, 2, 3, "Vier"
+#kurz_tupel[0] = 10
+kurz_tupel = 2,5,"Neu"
+#print(kurz_tupel)
+kurz_tupel += (7,8)
+#print(kurz_tupel)
 
-print("Hallo" not in zeichenkette)
 
-#Elemente können nicht gelöscht werden
-#del mein_tupel[1]
+kurze_antwort = (42, "Die Antwort", 3.14, False)
+#print(id(kurze_antwort))
 
-#Länge eines Tupels mit len()
-print("Anzahl der Elemente:", len(mein_tupel))
-#Typische Iteration über alle Elemente
-for element in mein_tupel:
+kurze_antwort += (True,)
+#print(id(kurze_antwort))
+#print(kurze_antwort)
+
+kurze_antwort = (42, "Die Antwort", 3.14, False)
+#print(id(kurze_antwort), kurze_antwort)
+kurze_antwort += (True,)
+#print(id(kurze_antwort) , kurze_antwort)
+
+#del kurze_antwort[1]
+
+#VErvielfachen von Tupel
+t1 = (2,4,6)
+t2 = (1,3,5)
+t_neu = t1 * 2
+#print(t_neu)
+#Achtung ! Tupel mit einem Element ebenfalls mit Komma definieren
+t3  = (2,)
+t4 = (3)
+print(t3 * t4)
+
+#Hier funktionier die Multiplikation, da auf beide Tupel mit Index zugegriffen wird
+t1 = (1,2,3)
+t2 = (6,7,8)
+print(t1[2]*t2[0])
+
+
+#gibt wieder Fehler, da Slicing ein Tupel zurückgibt
+try:
+    print(t1[0:2]*t2[0:2])
+except TypeError as e:
+    print("Fehler:", e)
+
+t1 = (1,2,3)
+t2 = (6,7,8)
+print(t1[0:2]*t2[0])
+
+#Workaround für Tupelmanipulationen
+t1 = (2, 6, 9)
+t2 = (1, 4, 6)
+
+t_gesamt = t1 + t2
+sortiert = sorted(t_gesamt) # ACHTUNG LISTE
+t_sortiert = tuple(sortiert) # Sortierte Liste in Tupel umwandeln
+print("Sortierte Ausgabe:", t_sortiert)
+
+print(len(t_sortiert))
+
+for index in range(len(t_sortiert)):
+    print(f"Element an Index {index}: {t_sortiert[index]}") 
+
+for element in t_sortiert:
     print("Element:", element)
-
-#weitere Möglichkeit über Tupel zu iterieren mit Index
-for index in range(len(mein_tupel)):
-    print("Element mit Index", index, ":", mein_tupel[index])
-
-mehrdimensionales_tupel = (("Apfel", "Banane"), (1,2,3), ("Kirsche", "Pflaume"))
-for kleines_tupel in mehrdimensionales_tupel:
-    for element in kleines_tupel:
-        print("KLeines Tupel", kleines_tupel,"Element:", element)
-
-
-tuple = (1,3,7,8,7,5,4,6,8,5)
-        
-print(tuple.count(5))
-
-#Index des ersten Vorkommens eines Elements im Tupel:
-print(tuple.index(8))
-
-zahlen_1 = (16, 37, 31, 10, 27)
-zahlen_2 = (45, 76, 53, 28, 37)
-gesamt = zahlen_1 + zahlen_2
-
-print("37 kommt", zahlen_1.count(37), "-mal in zahlen_1 vor")
-print("37 kommt", zahlen_2.count(37), "-mal in zahlen_2 vor")
-print("37 kommt", gesamt.count(37), "-mal in gesamt vor")
-# Index des ersten Vorkommens eines Elements im Tupel ermitteln
-# index("xy")
-print("37 hat in gesamt den Index", gesamt.index(37))
-
-
 

@@ -21,3 +21,20 @@ try:
     del tupel_3[-1]  # TypeError: 'tuple' object doesn't support item deletion
 except TypeError as e:
     print("Fehler:", e)
+
+
+
+#Element aus Tupel löschen
+#t1.pop()
+#del t1[-1]
+#nicht möglich, da Tupel als unveränderbar definiert ist!
+
+#aber Tupel kann ohne letztes Element dargestellt werden, 
+# indem das Element ausgeschnitten wird und ein neues Tupel erstellt wird
+#Aber Achtung, in dem neuen Tupel ist das letzte Element nicht mehr enthalten
+#im alten Tupel bleibt es aber erhalten
+t1 = (1,2,3,4,5)
+t1_new = t1[:-1]
+print(t1_new)
+print(t1)
+ 
