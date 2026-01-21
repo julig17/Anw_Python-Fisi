@@ -1,6 +1,6 @@
 #Unveränderliche Datentypen
-'''Argumente werden per Call by Value(Wertübergabe) übergeben'''
-'''für zahl neue Speicheradresse reserviert '''
+'''Argumente werden per Call by Reference übergeben'''
+'''für zahl neue Speicheradresse reserviert, Call by Value wenn verändert wird '''
 def erhoehe(zahl):
     zahl = zahl + 1
     print("In Funktion:", zahl)
@@ -32,6 +32,7 @@ def ports_hinzufuegen_kopie(ports):
     ports.append(8080)  
     print("In Funktion:", ports)
 firewall_ports = [22, 80, 443]
+#copy der Liste übergeben auh über Slicing: firewall_ports[:]
 ports_hinzufuegen_kopie(firewall_ports.copy())  
 print("Firewall Ports:", firewall_ports)
 
