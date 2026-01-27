@@ -17,3 +17,5 @@ print("Kleinste Zahl:", ergebnis[1])
 groesste, kleinste = groesste_kleinste_zahl(zahlen) 
 print("Größte Zahl:", groesste)
 print("Kleinste Zahl:", kleinste)
+
+

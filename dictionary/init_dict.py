@@ -6,4 +6,5 @@ while True:
         break
     englisch = input("Geben Sie die englische Übersetzung ein: ")
     woerterbuch[deutsch] = englisch 
-print("Wörterbuch:", woerterbuch)   
+for wort in woerterbuch:
+    print(f"{wort} -> {woerterbuch[wort]}")

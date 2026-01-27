@@ -17,6 +17,6 @@ def erhoehe_liste(zahlen_liste):
 
 meine_liste = [1, 2, 3]
 print("Vor dem Funktionsaufruf:", meine_liste)
-erweiterte_liste = erhoehe_liste(meine_liste)
+erweiterte_liste = erhoehe_liste(meine_liste[:])
 print("Nach dem Funktionsaufruf:", erweiterte_liste)    
 print("Originalwert wurde verändert:", meine_liste)

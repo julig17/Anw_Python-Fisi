@@ -1,4 +1,5 @@
 #Operator zum Zusammenführen von Dictionaries
+
 dict1 = {"a": 1, "b": 2}
 print(dict1["a"])
 print(len(dict1))
@@ -11,8 +12,10 @@ del kombiniertes_dict["a"]
 print(kombiniertes_dict)
 
 
-ports = [22, 80, 443]
-dienste = ["SSH", "HTTP", "HTTPS"]
+ports = (22, 80, 443)
+dienste = ["SSH", "HTTP", "HTTPS", "FTP"]
 
 port_dienst = dict(zip(ports, dienste))
+print(port_dienst)
+port_dienst[443] = "Secure HTTP"
 print(port_dienst)
