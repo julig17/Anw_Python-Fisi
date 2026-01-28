@@ -10,13 +10,18 @@ print(woerterbuch)
 print(woerterbuch.get('Apfel')) 
 # oder mit []
 print(woerterbuch['Apfel'])
-print(woerterbuch.get('Orange', 'Nicht gefunden'))
+print(woerterbuch.get('Orange'))
+try:  
+  print(woerterbuch['Orange'])
+except: 
+  print("Zugriff auf nicht vorhandenen Schlüssel")
 
 #Hinzufügen eines neuen Elements
 woerterbuch['Orange'] = 'orange'
 print(woerterbuch)
 #oder updaten
 woerterbuch.update({'Traube': 'grape'})
+woerterbuch = woerterbuch | {'Erdbeere': 'strawberry'}
 print(woerterbuch)
 
 #WErt ändern
@@ -24,6 +29,9 @@ woerterbuch['Banane'] = 'yellow banana'
 print(woerterbuch)
 #oder mit update
 woerterbuch.update({'Kirsche': 'red cherry'})
+print(woerterbuch)
+"""!!!Falls der Key nicht vorhanden, wird der Key mit Schlüssel dem Dict. hinzugefügt"""
+woerterbuch["Blaubeere"] = "blueberry"
 print(woerterbuch)
 
 #Löschen eines Elements
@@ -51,3 +59,5 @@ paare = woerterbuch.items()
 print('Paare:', paare)
 for schluessel, wert in woerterbuch.items():
   print(schluessel, '->', wert)
+
+ 
