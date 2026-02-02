@@ -1,4 +1,5 @@
 autos = {"BMW", "Mercedes", "VW", "Audi"}
+
 print(f"Autos: {autos}")
 autos.add("Porsche")   
 print(f"Autos nach Hinzufügen von Porsche: {autos}")
@@ -8,9 +9,22 @@ try:
     autos.remove("Ferrari")
 except KeyError as e:
     print("Fehler beim Entfernen von Ferrari (nicht vorhanden):", e)
+
+autos.discard("Audi")  
+print(f"Autos nach Discard von Audi (nicht vorhanden): {autos}") 
 autos.discard("Ferrari")  
+
 print(f"Autos nach Discard von Ferrari (nicht vorhanden): {autos}") 
+
+
+
+liste = [1,2,3]
+print(liste.pop())
+dict = {"one" : 1, "two" : 2}
+print(dict.pop("one"))
+
 autos.pop()  
 print(f"Autos nach Pop (entfernt ein beliebiges Element): {autos}") 
+
 autos.update(["Opel", "Ford"])  
 print(f"Autos nach Update mit Opel und Ford: {autos}")
