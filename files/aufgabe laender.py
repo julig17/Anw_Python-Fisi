@@ -2,8 +2,8 @@
 def ausgabe_dict_in_datei(inhalt, dateiname):
     try:
         with open(dateiname, "w", encoding="utf-8") as file:
-            for key, value in inhalt.items():
-                file.write(f"{key} : {value}\n")
+            for schluessel, wert in inhalt.items():
+                file.write(f"{schluessel} : {wert}\n")
     except FileNotFoundError:
         print("Datei nicht gefunden:")
     except:
