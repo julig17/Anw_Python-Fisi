@@ -1,48 +1,52 @@
-"""open öffnet die Datei, und gibt ein file-Objekt zurück
-mit dem file-Objekt kann man den Inhalt der Datei auslesen read()"""
-"""Immer im try except Block, da bei Dateien Fehler auftreten können"""
-try: 
-    file = open(file="./files/text.txt", mode="r", encoding="utf-8")
-    print(file.read())
-    file.close()
+dateiname = "./files/gedichte.txt"
+try:
+    datei_objekt = open(file=dateiname, mode="r", encoding="UTF-8")
+    for zeile in datei_objekt:
+        #mache sonst a mit der Zeile, verarbeiten
+        #print(zeile.strip())
+        pass
+    datei_objekt.close()
 except FileNotFoundError:
     print("Datei nicht gefunden")
-except Exception:
-    print(Exception, "Sonstiger Dateifehler")
+except Exception as ex:
+    print("Ein anderer Fehler ist aufgetretn", ex)
 
-print("einfache Iteration zum Lesen")
-try: 
-    file = open(file="./files/text.txt", mode="r", encoding="utf-8")
-    for zeile in file:
-        print(zeile)
-    file.close()
-except FileNotFoundError:
-    print("Datei nicht gefunden")
-except:
-    print("sonstige Dateifehler")
 
-"""mit readline()"""
-try: 
-    with open(file="./files/text.txt", mode="r", encoding="utf-8") as file:
-    #lese erste Zeile
-        zeile = file.readline()
-        while zeile != "":
-            print(zeile)
-            zeile = file.readline()
+try:
+    datei_objekt = open(file=dateiname, mode="r", encoding="UTF-8")
+    zeile = datei_objekt.readline()
+    #print(zeile)
+    while zeile != "":
+        #print(zeile)
+        zeile = datei_objekt.readline()
+    datei_objekt.close()
 except FileNotFoundError:
     print("Datei nicht gefunden")
-except:
-    print("sonstige Dateifehler")
+except Exception as ex:
+    print("Ein anderer Fehler ist aufgetretn", ex)
 
-"""in Liste"""
-zeilen = []
-try: 
-    with open(file="./files/text.txt", mode="r", encoding="utf-8") as file:
-        zeilen = file.readlines()
+ohne_whitespaces = []
+try:
+    datei_objekt = open(file=dateiname, mode="r", encoding="UTF-8")
+    liste  = datei_objekt.readlines()
+    for element in liste:
+        if element != "\n":
+         ohne_whitespaces.append(element.strip())
+    print(ohne_whitespaces)
+    datei_objekt.close()
 except FileNotFoundError:
     print("Datei nicht gefunden")
-except Exception as e:
-    print("sonstige Dateifehler", e)
-print(zeilen)
+except Exception as ex:
+    print("Ein anderer Fehler ist aufgetretn", ex)
+
+try:
+    datei_objekt = open(file=dateiname, mode="r", encoding="UTF-8")
+    inhalt = datei_objekt.read()
+    print(inhalt)
+    datei_objekt.close()
+except FileNotFoundError:
+    print("Datei nicht gefunden")
+except Exception as ex:
+    print("Ein anderer Fehler ist aufgetretn", ex)
 
 
