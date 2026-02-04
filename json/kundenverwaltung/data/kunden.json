@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Max Mustermann",
+        "email": "max@example.de",
+        "geburtsjahr": "1990"
+    },
+    {
+        "name": "Peter Hauser",
+        "email": "hauser@example.de",
+        "geburtsjahr": "1999"
+    },
+    {
+        "name": "Julia Greif",
+        "email": "greif.julia@test.com",
+        "geburtsjahr": "2000"
+    },
+    {
+        "name": "Paul M\u00fcller",
+        "email": "test@fm.de",
+        "geburtsjahr": "2001"
+    }
+]

@@ -1,5 +1,5 @@
 import json
-# Daten vorbereiten (Liste von Dictionaries)
+# Daten vorbereiten (Konfig Dictionaries)
 konfiguration = {
   "server": {
     "hostname": "fileserver01",

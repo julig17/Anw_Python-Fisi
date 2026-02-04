@@ -14,7 +14,7 @@ except Exception as e:
 
 print("So sieht der geparste JSON String aus")
 print(personen_liste)
-print("-------------------")
+print("-" * 10)
 
 #da unsere Daten in einer Liste liegen, können wir durch die liste iterieren 
 #und die Personen ausgeben
@@ -26,8 +26,8 @@ for person in personen_liste:
             for kind in wert:
                 for eigenschaft, wert in kind.items():
                     print(f"\t{eigenschaft} : {wert}")
-                print("\t---------------")
+                print("-" * 10)
         else:
             print(f"{eigenschaft} : {wert}")
-    print("-------------------")
+    print("-" * 10)
 
