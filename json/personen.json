@@ -1,0 +1,32 @@
+[{
+  "name": "Georg",
+  "alter": 47,
+  "verheiratet": false,
+  "beruf": null,
+  "kinder": [
+    {
+      "name": "Lukas",
+      "alter": 19,
+      "schulabschluss": "Gymnasium"
+    },
+    {
+      "name": "Lisa",
+      "alter": 14,
+      "schulabschluss": null
+    }
+  ]
+},
+{
+  "name": "Hans",
+  "alter": 40,
+  "verheiratet": true,
+  "beruf": "Elektriker",
+  "kinder": [
+    {
+      "name": "Mila",
+      "alter": 7,
+      "schulabschluss": null
+    }
+  ]
+}
+]
