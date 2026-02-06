@@ -1,5 +1,5 @@
 import json
-# Daten vorbereiten (Konfig Dictionaries)
+
 konfiguration = {
   "server": {
     "hostname": "fileserver01",
@@ -19,10 +19,13 @@ konfiguration = {
     "auto_backup": True
   }
 }
-# json-Datei schreiben
-dateiname = "./json/konfig_neu.json"
+
+print(type(konfiguration))
+
+dateiname = "./json/konfiguration.json"
+
 try:
-    with open(file=dateiname, mode="w", encoding="UTF-8") as konfigdatei:
-        json.dump(konfiguration, konfigdatei, indent=4)
-except Exception as e:
-    print(f"Zugriffsfehler auf die json-Datei: {e}")
+  with open(dateiname, "w", encoding="UTF-8") as konfig_datei: 
+      json.dump(konfiguration, konfig_datei, indent=4)
+except Exception as ex:
+   print(f"Zugrffsfehler beim Schreiben: {ex}")

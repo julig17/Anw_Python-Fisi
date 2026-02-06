@@ -1,14 +1,22 @@
 import json
 
-try:        
-    with open("./json/konfig.json", "r", encoding="UTF-8") as konfig_datei:
-# json-Datei komplett in die Liste personen einlesen
-        konfig = json.load(konfig_datei)
-except FileNotFoundError as e:
-    print("Datei nicht gefunden", e)
-except Exception as e:
-    print(f"Sonstiger Dateizugriffsfehler: {e}")
+dateiname = "./json/konfig.json"
 
-print(konfig["hostname"])
-print(konfig["ip"])
-print(konfig["port"])
+try :
+    with open(dateiname, "r", encoding="UTF-8") as konfig_datei:
+        konfiguration = json.load(konfig_datei)
+        print(konfiguration)
+        print(type(konfiguration))
+except FileNotFoundError as e:
+    print("Datei nicht gefunfen", e)
+except Exception as e:
+    print("Sonstiger Fehler", e)
+
+#{'hostname': 'fileserver01', 'ip': '192.168.1.10', 'port': 22}
+ip_adresse = konfiguration["ip"]
+hostname = konfiguration["hostname"]
+print(ip_adresse)
+print(hostname)
+
+for schluessel, wert in konfiguration.items():
+    print(f"{schluessel} : {wert}")

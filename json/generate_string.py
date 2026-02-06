@@ -7,6 +7,7 @@ json_string = json.dumps(python_obj)
 print(json_string)  
 
 
+
 #mit Einrückung
 data = {
     "name": "John",

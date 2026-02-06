@@ -2,14 +2,21 @@
 
 import json
 
-json_string =  '{ "name":"John", "age":30, "city":"New York"}'
+json_string =  '{"name":"John", "age":30, "city":"New York"}'
 
 # parse :
-python_pbject = json.loads(json_string)
+python_object = json.loads(json_string)
+print(type(python_object))
 
 # the result is a Python dictionary:
-print(python_pbject["age"])
+alter = python_object["age"]
+print(type(alter))
+print(python_object["age"])
+
+
 
 json_string = '[1, 2, 3, "four", "five"]'
-python_pbject = json.loads(json_string)
-print(python_pbject)
+python_object = json.loads(json_string)
+print(python_object)
+print(type(python_object))
+print(python_object[::-1])

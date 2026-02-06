@@ -2,9 +2,10 @@
 import json
 
 personen_liste = []
+dateiname = "./json/personen.json"
 
 try:        
-    with open("./json/personen.json", "r", encoding="UTF-8") as personendatei:
+    with open(dateiname, "r", encoding="UTF-8") as personendatei:
 # json-Datei komplett in die Liste personen Liste einlesen
         personen_liste = json.load(personendatei)
 except FileNotFoundError as e:
@@ -13,7 +14,8 @@ except Exception as e:
     print(f"Sonstiger Dateizugriffsfehler: {e}")
 
 print("So sieht der geparste JSON String aus")
-print(personen_liste)
+#print(personen_liste)
+
 print("-" * 10)
 
 #da unsere Daten in einer Liste liegen, können wir durch die liste iterieren 
@@ -28,6 +30,13 @@ for person in personen_liste:
                     print(f"\t{eigenschaft} : {wert}")
                 print("-" * 10)
         else:
-            print(f"{eigenschaft} : {wert}")
+            print(f"Person: {eigenschaft} : {wert}")
     print("-" * 10)
+
+    person1= personen_liste[0]
+    name = person1["name"]
+    kinder = person1["kinder"]
+    kinder1 = kinder[0]
+    name_kind1 = kinder1["name"]
+    print(name_kind1)
 
