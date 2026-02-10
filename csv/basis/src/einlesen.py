@@ -1,7 +1,7 @@
 datei_name = "./csv/basis/data/artikel.csv"
 try:
 # Datei öffnen und gesamten Inhalt lesen
-    with open(datei_name "r", encoding="UTF-8") as artikel_datei:
+    with open(datei_name, "r", encoding="UTF-8") as artikel_datei:
         datei_inhalt = artikel_datei.read()
 except FileNotFoundError:
     print("Datei nicht gefunden")
