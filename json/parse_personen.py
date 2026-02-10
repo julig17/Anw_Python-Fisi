@@ -33,10 +33,14 @@ for person in personen_liste:
             print(f"Person: {eigenschaft} : {wert}")
     print("-" * 10)
 
+"""
+#Zeigt die Verschachtelung des JSON Dokumentes
     person1= personen_liste[0]
     name = person1["name"]
-    kinder = person1["kinder"]
-    kinder1 = kinder[0]
-    name_kind1 = kinder1["name"]
-    print(name_kind1)
+    print(person1["beruf"])
+    #kinder = person1["kinder"]
+    #kinder1 = kinder[0]
+    #name_kind1 = kinder1["name"]
+    #print(name_kind1)
 
+"""
