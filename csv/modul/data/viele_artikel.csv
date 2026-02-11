@@ -1,0 +1,21 @@
+Artikelnummer,Artikelname,Preis,Kategorie,Anzahl
+1001,Tastatur,29.99,Hardware,15
+1002,Maus,19.99,Hardware,30
+1003,Monitor 24 Zoll,179.90,Hardware,8
+1004,USB-Stick 64GB,12.50,Speicher,50
+1005,Externe Festplatte 1TB,79.99,Speicher,12
+1006,LAN-Kabel 5m,4.99,Netzwerk,40
+1007,WLAN-Router,129.00,Netzwerk,6
+1008,Drucker,149.95,Peripherie,5
+1009,Headset,39.90,Audio,20
+1010,Webcam,59.00,Peripherie,10
+1011,Notebook 15 Zoll,799.00,Computer,4
+1012,PC Mauspad,5.99,Zubehör,60
+1013,USB-Hub,14.99,Zubehör,25
+1014,SSD 512GB,69.90,Speicher,18
+1015,Server Rack 19 Zoll,499.00,Infrastruktur,2
+1016,Patchkabel 1m,2.49,Netzwerk,100
+1017,IP-Telefon,89.00,Kommunikation,9
+1018,Beamer,399.00,Präsentation,3
+1019,Smartphone,649.00,Mobilgeräte,7
+1020,Tablet,349.00,Mobilgeräte,6
