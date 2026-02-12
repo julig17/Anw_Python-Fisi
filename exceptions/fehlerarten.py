@@ -1,3 +1,55 @@
+liste = ["Hallo", "Welt", 123, "Python"]
+try:
+    for index in range(len(liste)+1):
+        print(liste[index])
+except IndexError:
+    print("Bla")
+
+#Attribute Error
+#liste.keys()
+#liste.apend()
+
+
+#IndexError 
+#alter = int(input("Wie alt bist du??? "))
+alter = 2
+altersgruppen = ["Kind", "Jugendlich", "Erwachsen"]
+
+print(altersgruppen[alter])
+
+if alter > 18:
+    print("Du bisst minderjährig")
+else:
+    print("Du bist volljährig")
+
+#KexError
+try:
+    dict = {"Name": "Apfel", "Farbe": "Rot"}
+    print(dict["Preis"])
+except KeyError:
+    print("Dieser Schlüssel existiert nicht")
+except:
+    print("Irendwas anderes ist schief gelaufen")
+ 
+# Richtig
+try:
+    dict = {"Name": "Apfel", "Farbe": "Rot"}
+    print(dict["Name"])
+except KeyError:
+    print("Dieser Schlüssel existiert nicht")
+except:
+    print("Irendwas anderes ist schief gelaufen")
+
+#ValueError
+#print(int("Hallo"))
+
+#TypeError
+#print("2" + 3)
+#kein TypeError
+print("2" * 3)
+
+print(dateiname)
+
 #print(x)
 # NameError: name 'x' is not defined
 
