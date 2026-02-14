@@ -1,0 +1,31 @@
+---
+# Example YAML file
+# This is a comment
+
+person: &person_anchor  # anchor for 'person' mapping
+  name: John Doe
+  age: 35
+  address:
+    street: 123 Main St.
+    city: Anytown
+    state: CA
+    zip: '12345'
+  interests:
+    - reading  # sequence (list)
+    - hiking
+    - traveling
+
+# Using an anchor reference
+another_person: *person_anchor
+
+multi_line_string: |  # multi-line string
+  This is a
+  multi-line
+  string.
+
+# Scalar examples
+integer_scalar: 42
+float_scalar: 3.14
+boolean_scalar: true
+null_scalar: null
+...

@@ -1,0 +1,21 @@
+server:
+  hostname: server01
+  ip: 192.168.1.10
+  environment: production
+
+services:
+  - name: webserver
+    port: 80
+    enabled: true
+  - name: database
+    port: 3306
+    enabled: true
+  - name: monitoring
+    port: 9000
+    enabled: false
+
+users:
+  - name: admin
+    role: administrator
+  - name: backup
+    role: service
