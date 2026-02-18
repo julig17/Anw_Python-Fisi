@@ -1,3 +1,10 @@
+"""
+Dieses Skript enthält Code aus dem Projekt 'ServerMergeBeispiel'
+
+Originalquelle: https://github.com/YourRapiddeath/ServerMergeBeispiel/tree/master
+Autor: YourRapiddeath
+Änderungen: Variablennamen geändert, Funktionsablauf leicht angepasst 
+"""
 import csv
 
 VALID_ROLES = {"warrior", "mage", "healer", "archer", "tank", "assassin"}
