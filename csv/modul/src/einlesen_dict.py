@@ -12,6 +12,7 @@ except Exception as e:
     print("sonstiges Dateizugriffsfehler", e)
 
 
+
 for zeile in zeilen_liste:
     for spalte, wert in zeile.items():
         print(f"{spalte:15}: {wert}")
