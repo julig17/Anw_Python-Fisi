@@ -18,6 +18,10 @@ DATA_NAME_SERVER_A_CLEAN = "./csv/mergeCSV/data/merged/serverA_clean.csv"
 DATA_NAME_SERVER_B_CLEAN = "./csv/mergeCSV/data/merged/serverB_clean.csv"
 DATA_NAME_MERGED = "./csv/mergeCSV/data/merged/merged_clean.csv"
 
+DATA_NAME_ERROR_A = "./csv/mergeCSV/data/log/serverA.txt"
+DATA_NAME_ERROR_B = "./csv/mergeCSV/data/log/serverB.txt"
+DATA_NAME_CONFLICTS = "./csv/mergeCSV/data/log/conflicts.txt"
+
 COLUMN_NAME = ["playername", "role"]
 
 
@@ -140,7 +144,18 @@ def print_evaluation(roles_a, roles_b, merged):
         f"Beide: {len(both)}"
     )
 
-
+"""
+Zeile für Zeile in error_log schreiben
+"""
+def write_error_log(errors, path):
+    try:
+        with open(path, "w", encoding="utf-8") as file:
+            for row in errors:
+                file.write(f"{row}\n")
+    except FileNotFoundError as ex:
+        print(f"Datei nicht gefunden: {ex}")
+    except:
+        print("sonstige Dateifehler")
 
 #einlesen der serverA Datei und bereinigt in einem Dictionary speichern
 #die Fehler sind in errors_a in Liste gespeichert
@@ -158,4 +173,10 @@ write_csv(DATA_NAME_MERGED, merged)
 
 #Aufgabe 4
 print_evaluation(roles_a, roles_b, merged)
+
+#Aufgabe5
+write_error_log(errors_a, DATA_NAME_ERROR_A)
+write_error_log(errors_b, DATA_NAME_ERROR_B)
+write_error_log(conflicts, DATA_NAME_CONFLICTS)
+
 
