@@ -71,22 +71,18 @@ Basis genommen wird und um Datensätze aus dict 2 erweitert wird,
 falls nicht bereits enthalten
 """
 def merge(a, b):
-    # der MErge dictionary wird mit den Daten aus Dict a initialisiert
+    conflict = []
     merged = dict(a)
-    conflicts = []
-    for player, role_b in b.items():
-        #Spieler ist bereits in dem Dict enthalten
+    #items() von dict gibt uns key:value
+    for player, role in b.items():
         if player in merged:
-            #Konflikt, da Spieler in Dict unterschiedliche Roll hat
-            if merged[player] != role_b:
-                conflicts.append(
-                    f"Konflikt: {player} -> serverA={merged[player]} vs serverB={role_b}"
-                )
+            if merged[player] != role:
+                conflict.append(f"Spieler {player} hat eine andere Rolle in {merged[player]} als in ServerB {role}")
         else:
-            #Spieler ist nicht drin, deshalb wird er in den gemergden gespeichrt
-            merged[player] = role_b
-    return merged, conflicts
+            #speichere alle spieler aus B in das zusammengeführte Dict 
+            merged[player] = role
 
+    return merged, conflict
 
 
 #einlesen der serverA Datei und bereinigt in einem Dictionary speichern

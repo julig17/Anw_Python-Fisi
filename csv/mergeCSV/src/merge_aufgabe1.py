@@ -35,7 +35,7 @@ def read_csv(path):
             #bereingen des Spielernamen und Spielerrolle
             player = (row.get("playername") or "").strip().lower()
             role = (row.get("role") or "").strip().lower()
-            #Bedingung Spielername ist leere ZEichenkette - also in Fehlerliste
+            #Bedingung Spielername ist leere Zeichenkette - also in Fehlerliste
             if player == "":
                 errors.append(f"{path}: Zeile {line_no}: Spielername fehlt")
                 continue
