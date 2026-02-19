@@ -98,8 +98,6 @@ def print_errors(errors_a, errors_b, roles_a, roles_b, merged, conflicts, show_m
 
 def main():
     roles_a, errors_a = read_csv(DATA_NAME_SERVER_A)
-    print(roles_a)
-    print(errors_a)
     roles_b, errors_b = read_csv(DATA_NAME_SERVER_B)
     merged, conflicts = merge(roles_a, roles_b)
     print_errors(errors_a, errors_b, roles_a, roles_b, merged, conflicts, show_max_errors=10)

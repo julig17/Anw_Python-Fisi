@@ -3,7 +3,8 @@ Dieses Skript enthält Code aus dem Projekt 'ServerMergeBeispiel'
 
 Originalquelle: https://github.com/YourRapiddeath/ServerMergeBeispiel/tree/master
 Autor: YourRapiddeath
-Änderungen: Variablennamen geändert, Funktionsablauf leicht angepasst 
+Änderungen: Variablennamen geändert, Funktionsablauf leicht angepasst, Kommentare,
+Exceptions, Consts 
 """
 import csv
 
@@ -16,6 +17,8 @@ DATA_NAME_SERVER_B = "./csv/mergeCSV/data/serverB.csv"
 DATA_NAME_SERVER_A_CLEAN = "./csv/mergeCSV/data/merged/serverA_clean.csv"
 DATA_NAME_SERVER_B_CLEAN = "./csv/mergeCSV/data/merged/serverB_clean.csv"
 DATA_NAME_MERGED = "./csv/mergeCSV/data/merged/merged_clean.csv"
+
+COLUMN_NAME = ["playername", "role"]
 
 
 """
@@ -87,7 +90,24 @@ def merge(a, b):
             merged[player] = role_b
     return merged, conflicts
 
-
+"""
+Diese Funktion schreibt die Daten aus den Dictionaries in 
+eine Datei rein
+"""
+def write_csv(path, roles):
+    try:
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(COLUMN_NAME)
+            #die Daten werden nach Spielername sortiert
+            for player in sorted(roles):
+                writer.writerow([player, roles[player]])
+    except FileNotFoundError:
+        print("Datei nicht gefunden: ", path)
+    except Exception as e:
+        print("sonstiges Dateizugriffsfehler", e)
+    else:
+        print("Geschrieben:", path)
 
 #einlesen der serverA Datei und bereinigt in einem Dictionary speichern
 #die Fehler sind in errors_a in Liste gespeichert
@@ -97,3 +117,8 @@ roles_b, errors_b = read_csv(DATA_NAME_SERVER_B)
 
 #Aufgabe 2, gemergte Dictionaries mit Fehlerliste
 merged, conflicts = merge(roles_a, roles_b)
+
+#Aufgabe 3, in Datei schreiben
+write_csv(DATA_NAME_SERVER_A_CLEAN, roles_a)
+write_csv(DATA_NAME_SERVER_B_CLEAN, roles_b)
+write_csv(DATA_NAME_MERGED, merged)

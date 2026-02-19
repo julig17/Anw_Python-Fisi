@@ -61,9 +61,9 @@ def read_csv(path):
     return roles, errors
 
 
-
 #einlesen der serverA Datei und bereinigt in einem Dictionary speichern
 #die Fehler sind in errors_a in Liste gespeichert
 #Rückgabe als entpackter tupel
 roles_a, errors_a = read_csv(DATA_NAME_SERVER_A)
 roles_b, errors_b = read_csv(DATA_NAME_SERVER_B)
+
