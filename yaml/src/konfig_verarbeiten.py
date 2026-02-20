@@ -9,23 +9,27 @@ except (FileNotFoundError, yaml.YAMLError, Exception) as ex:
     print("Dateifehler", ex)
 
 # Serverdaten
-print("Server:")
+"""print("Server:")
 print("Hostname:", config["server"]["hostname"])
 print("IP:", config["server"]["ip"])
 print("Umgebung:", config["server"]["environment"])
-print("-" * 10)
+print("-" * 10)"""
 
-# Services
-print("Services:")
+print("Services")
+"""
 for service in config["services"]:
-    if service["enabled"]:
-        print(f"Starte Service: {service['name']} auf Port {service['port']}")
-    else:
-        print(f"Service deaktiviert: {service['name']}")
-
+        print(f"{service["name"]}, {service["port"]}")
+        if(service["enabled"]):
+             print(f"Starte Service  {service["name"]} auf {service["port"]} ")
+"""
 print("-" * 10)
+print("Benutzer")
 
-# Benutzer
-print("Benutzer:")
-for user in config["users"]:
-    print(f"Benutzer anlegen: {user['name']} ({user['role']})")
+def lege_benutzer_an(benutzer):
+    #legt die BEnutzer in DB an
+    #....
+    print(f"Der Benutzer wurde angelegt mit Name {benutzer["name"]} und Rolle {benutzer["role"]} ")
+
+for benutzer in config["users"]:
+    lege_benutzer_an(benutzer)
+    
