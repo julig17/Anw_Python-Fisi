@@ -1,0 +1,1 @@
+a_modul = "Das ist das a Modul"
