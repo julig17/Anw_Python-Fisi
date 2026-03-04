@@ -1,12 +1,13 @@
 #Multiplikation ganzer zahl x und y ist x maliges Addieren der Zahl y 
 #iterativ mit while schleife
 
-def multiplikation(x, y):
+
+def multiplikation(a, b):
+    i = 0
     ergebnis = 0
-    start = 0
-    while x > start:
-        ergebnis += y
-        start += 1
+    while i < b:
+        i += 1
+        ergebnis += a
     return ergebnis
 
-print(multiplikation(0,20))
+print(multiplikation(3, 5))
