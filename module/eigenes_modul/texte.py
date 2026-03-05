@@ -1,9 +1,15 @@
-import worthelfer
+import worthelfer as wh
 
-print(worthelfer.zaehle_woerter(" Hallo Welt"))
-print(worthelfer.saeubere_text(" Hallo Welt   "))
-print(worthelfer.ersetze_wort("Hallo Welt", "Welt" ,"du"))
+print(wh.zaehle_woerter(" Hallo Welt"))
+print(wh.saeubere_text(" Hallo Welt   "))
+print(wh.ersetze_wort("Hallo Welt", "Welt" ,"du"))
+
+"""
+from worthelfer import saeubere_text, zaehle_woerter
+
+print(saeubere_text(" Hallo Welt   "))
+print(zaehle_woerter(" Hallo Welt"))
 
 from worthelfer import *
 
-print(zaehle_woerter("Das ist ja toll"))
+print(zaehle_woerter("Das ist ja toll"))"""
