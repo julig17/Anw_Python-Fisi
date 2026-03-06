@@ -9,7 +9,7 @@ print(maximum_von_zwei_zahlen(10,10))
 print(maximum_von_zwei_zahlen(7,-7))"""
 
 class TestMaximum(unittest.TestCase):
-    #Das sollt ihr ausfüllen
+    #Das sollt ihr ausfüllen und die Funktion maximum_von_zwei_zahlen in der aufgabe.py implementieren
     pass
 
 if __name__ == '__main__':
