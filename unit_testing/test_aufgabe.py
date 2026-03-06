@@ -9,7 +9,7 @@ print(maximum_von_zwei_zahlen(10,10))
 print(maximum_von_zwei_zahlen(7,-7))"""
 
 class TestMaximum(unittest.TestCase):
-    #TODO
+    #Das sollt ihr ausfüllen
     pass
 
 if __name__ == '__main__':
