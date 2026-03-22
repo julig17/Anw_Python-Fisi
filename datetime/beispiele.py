@@ -1,34 +1,27 @@
 from datetime import datetime, date, time
 
-# Aktuelles Datum und Uhrzeit
-jetzt = datetime.now()
-print("Aktuelles Datum und Uhrzeit:", jetzt)
-
-# Aktuelles Datum
 heute = date.today()
-print("Aktuelles Datum:", heute)
+print(heute.isoformat())
 
-#gestiges Datum
-datum = date(2024, 6, 15)
-differenz = heute - datum
-print("Differenz zwischen heute und dem Datum:", differenz)   
+gestern = date(2026, 3, 9)
+print(gestern)
 
-#Wochentag des heutigen Datums
-wochentag = heute.weekday() 
-print("Wochentag des heutigen Datums (0=Montag, 6=Sonntag):", wochentag)
+differenz = heute - gestern
+print(differenz)
 
-#iso-Format des heutigen Datums
-iso_format = heute.isoformat()  
-print("Heutiges Datum im ISO-Format:", iso_format)
 
-#datum in einem benutzerdefinierten Format
-benutzerdefiniert = heute.strftime("%d.%m.%Y")
-print("Heutiges Datum in benutzerdefiniertem Format:", benutzerdefiniert)
+zeitstempel = datetime.now()
+print(zeitstempel)
 
-#uhrzeit im benutzerdefinierten Format
-uhrzeit = jetzt.strftime("%H:%M:%S")
-print("Aktuelle Uhrzeit in benutzerdefiniertem Format:", uhrzeit)
+heute_deutsch = heute.strftime("%d.%m.%Y") #10.03.2026
 
-#zeitstempel in iso-Format
-zeitstempel = jetzt.isoformat()
-print("Aktueller Zeitstempel im ISO-Format:", zeitstempel)
+print(heute_deutsch)
+
+wochen_zahl = gestern.weekday()
+liste_tag = ["Montag", "Dienstag"]  
+
+tag = liste_tag[wochen_zahl]
+dict_tag = {0 : "Montag", 1 : "Dienstag"}
+tag = dict_tag[wochen_zahl]
+
+

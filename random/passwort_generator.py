@@ -5,6 +5,7 @@ import random
 def generiere_passwort(laenge):
     zeichen = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"
     passwort_liste = random.choices(zeichen, k=laenge) 
+    print(passwort_liste)
     return "".join(passwort_liste)
 
 print("Das ist dein neues Passwort: ", generiere_passwort(8))

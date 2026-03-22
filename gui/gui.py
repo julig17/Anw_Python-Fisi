@@ -1,0 +1,1 @@
+'''erstelle ein programm mit einer gui uhr, die jede sekunde weitertickt'''
